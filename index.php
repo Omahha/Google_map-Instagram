@@ -166,7 +166,7 @@
                 });
             }
 
-            function getPosition(){
+            function getLatLng(){
                 let address = $("#address").val();
                 $.ajax({
                     type: "GET",
