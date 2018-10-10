@@ -156,20 +156,24 @@
         <script>
             let inputLat, inputLng;
             function test_instagram(){
+                console.log('test_instagram');
+
                 $.ajax({
                     type: "GET",
                     dataType: "jsonp",
                     cache: false,
-                    url: "https://api.instagram.com/v1/locations/search?lat=35.6585805"+ inputLat +"&lng=139.7454329"+ inputLng +"&access_token=8415320219.d67168c.7646405fbd2147169257dcd5ff05ccad",
+                    url: "https://api.instagram.com/v1/locations/search?lat="+ inputLat +"&lng="+ inputLng +"&access_token=8415320219.d67168c.7646405fbd2147169257dcd5ff05ccad",
                     success: function(response){
                         /*for(let data in response.data){
                             console.log(data);
                         }*/
+                        console.log('//test_instagram');
                     }
                 });
             }
 
             function getLatLng(){
+                console.log('getLatLng')
                 let address = $("#address").val();
                 address = address.replace(" ","+");
                 $.ajax({
@@ -182,6 +186,7 @@
                         inputLng = response.results[0].geometry.location.lng;
                         console.log(inputLat);
                         console.log(inputLng);
+                        console.log('//getLatLng');
                     }
                 })
             }
