@@ -144,6 +144,7 @@
                 <form action="">
                     <input type="text" id="address">
                     <button type="button" onclick="getLatLng()">get lat lng</button>
+                    <button type="button" onclick="test_program()">test program</button>
                 </form>
                 <button onclick="getPosition()">getPosition</button>
                 <div id="result"></div>
