@@ -143,7 +143,7 @@
                 <div id="test_instagram_result"></div>
                 <form action="">
                     <input type="text" id="address">
-                    <button type="button" onclick="test_program()">get lat lng</button>
+                    <button type="button" onclick="getLatLng()">get lat lng</button>
                 </form>
                 <button onclick="getPosition()">getPosition</button>
                 <div id="result"></div>
