@@ -168,6 +168,7 @@
 
             function getLatLng(){
                 let address = $("#address").val();
+                address = address.replace(" ","+");
                 $.ajax({
                     type: "GET",
                     dataType: "jsonp",
