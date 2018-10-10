@@ -173,8 +173,6 @@
                 });
             }
 
-            function 
-
             function getLatLng(){
                 console.log('getLatLng')
                 let address = $("#address").val();
