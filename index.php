@@ -143,7 +143,7 @@
                 <div id="test_instagram_result"></div>
                 <form action="">
                     <input type="text" id="address">
-                    <button type="button" onclick="getLatLng()">get lat lng</button>
+                    <button type="button" onclick="test_program()">get lat lng</button>
                 </form>
                 <button onclick="getPosition()">getPosition</button>
                 <div id="result"></div>
@@ -153,22 +153,20 @@
             
         </footer>
         <script>
+            let inputLat, inputLng;
             function test_instagram(){
                 $.ajax({
                     type: "GET",
                     dataType: "jsonp",
                     cache: false,
-                    //url: "https://api.instagram.com/v1/media/popular?access_token=8415320219.d67168c.7646405fbd2147169257dcd5ff05ccad",
-                    url: "https://api.instagram.com/v1/locations/search?lat=48.858844&lng=2.294351&access_token=8415320219.d67168c.7646405fbd2147169257dcd5ff05ccad",
-                    success: function(data) {
-                        document.querySelector("#test_instagram_result").innHTML = "reult here";
+                    url: "https://api.instagram.com/v1/locations/search?lat="+ inputLat +"&lng="+ inputLng +"&access_token=8415320219.d67168c.7646405fbd2147169257dcd5ff05ccad",
+                    success: function(response) {
+                        
                     }
                 });
             }
 
             function getLatLng(){
-                let address = $("#address").val();
-                address = address.replace(" ","+");
                 $.ajax({
                     type: "GET",
                     //contentType:"application/json; charset=utf-8",
@@ -177,8 +175,20 @@
                     url: "https://maps.googleapis.com/maps/api/geocode/json?components=locality:"+ address +"&key=AIzaSyDymcMD7E0irE6FM1uGqzEhVmU5LTJDh-0",
                     success: function(response){
                         console.log(response.results[0].geometry.location.lat);
+                        console.log(response.results[0].geometry.location.lng);
+                        inputLat = response.results[0].geometry.location.lat;
+                        inputLng = response.results[0].geometry.location.lng;
                     }
                 })
+            }
+
+            function test_program(){
+                let address = $("#address").val();
+                address = address.replace(" ","+");
+
+                getLatLng();
+
+                test_instagram();
             }
         </script>
         <script src="./js/main.js"></script>
