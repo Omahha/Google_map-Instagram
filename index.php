@@ -167,6 +167,8 @@
             }
 
             function getLatLng(){
+                let address = $("#address").val();
+                address = address.replace(" ","+");
                 $.ajax({
                     type: "GET",
                     //contentType:"application/json; charset=utf-8",
@@ -183,8 +185,7 @@
             }
 
             function test_program(){
-                let address = $("#address").val();
-                address = address.replace(" ","+");
+                
 
                 getLatLng();
 
