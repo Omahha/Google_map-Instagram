@@ -162,9 +162,9 @@
                     cache: false,
                     url: "https://api.instagram.com/v1/locations/search?lat="+ inputLat +"&lng="+ inputLng +"&access_token=8415320219.d67168c.7646405fbd2147169257dcd5ff05ccad",
                     success: function(response) {
-                        for(let data in response.data){
+                        /*for(let data in response.data){
                             console.log(data);
-                        }
+                        }*/
                     }
                 });
             }
@@ -179,17 +179,16 @@
                     cache: false,
                     url: "https://maps.googleapis.com/maps/api/geocode/json?components=locality:"+ address +"&key=AIzaSyDymcMD7E0irE6FM1uGqzEhVmU5LTJDh-0",
                     success: function(response){
-                        console.log(response.results[0].geometry.location.lat);
-                        console.log(response.results[0].geometry.location.lng);
                         inputLat = response.results[0].geometry.location.lat;
                         inputLng = response.results[0].geometry.location.lng;
+                        console.log(inputLat);
+                        console.log(inputLng);
                     }
                 })
             }
 
             function test_program(){
                 
-
                 getLatLng();
 
                 test_instagram();
