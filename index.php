@@ -171,7 +171,7 @@
                 address = address.replace(" ","+");
                 $.ajax({
                     type: "GET",
-                    contentType:"application/json; charset=utf-8",
+                    //contentType:"application/json; charset=utf-8",
                     dataType:"json",
                     cache: false,
                     url: "https://maps.googleapis.com/maps/api/geocode/json?components=locality:"+ address +"&key=AIzaSyDymcMD7E0irE6FM1uGqzEhVmU5LTJDh-0",
