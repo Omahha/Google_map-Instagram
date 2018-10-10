@@ -162,12 +162,12 @@
                     type: "GET",
                     dataType: "jsonp",
                     cache: false,
-                    url: "https://api.instagram.com/v1/locations/search?lat="+ inputLat +"&lng="+ inputLng +"&access_token=8415320219.d67168c.7646405fbd2147169257dcd5ff05ccad",
+                    //url: "https://api.instagram.com/v1/locations/search?lat="+ inputLat +"&lng="+ inputLng +"&access_token=8415320219.d67168c.7646405fbd2147169257dcd5ff05ccad",
                     url: "https://api.instagram.com/v1/media/search?lat="+ inputLat +"&lng="+ inputLng +"&distance=5&access_token=8415320219.d67168c.7646405fbd2147169257dcd5ff05ccad";
                     success: function(response){
-                        for(let key in response.data){
+                        /*for(let key in response.data){
                             console.log(response.data[key].id);
-                        }
+                        }*/
                         console.log('//test_instagram');
                     }
                 });
