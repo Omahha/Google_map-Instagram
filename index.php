@@ -176,7 +176,7 @@
                     cache: false,
                     url: "https://maps.googleapis.com/maps/api/geocode/json?components=locality:"+ address +"&key=AIzaSyDymcMD7E0irE6FM1uGqzEhVmU5LTJDh-0",
                     success: function(response){
-
+                        console.log(response.geometry.location.lat);
                     }
                 })
             }
