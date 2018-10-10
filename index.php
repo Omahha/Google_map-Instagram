@@ -186,7 +186,8 @@
                         inputLng = response.results[0].geometry.location.lng;
                         console.log(inputLat);
                         console.log(inputLng);
-                        console.log('//getLatLng');
+
+                        test_instagram();
                     }
                 })
             }
@@ -195,7 +196,7 @@
                 
                 getLatLng();
 
-                test_instagram();
+                
             }
         </script>
         <script src="./js/main.js"></script>
