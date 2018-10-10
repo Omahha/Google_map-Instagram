@@ -160,7 +160,7 @@
                     type: "GET",
                     dataType: "jsonp",
                     cache: false,
-                    url: "https://api.instagram.com/v1/locations/search?lat="+ inputLat +"&lng="+ inputLng +"&access_token=8415320219.d67168c.7646405fbd2147169257dcd5ff05ccad",
+                    url: "https://api.instagram.com/v1/locations/search?lat=35.6585805"/*+ inputLat +*/"&lng=139.7454329"/*+ inputLng +*/"&access_token=8415320219.d67168c.7646405fbd2147169257dcd5ff05ccad",
                     success: function(response) {
                         /*for(let data in response.data){
                             console.log(data);
@@ -174,7 +174,6 @@
                 address = address.replace(" ","+");
                 $.ajax({
                     type: "GET",
-                    //contentType:"application/json; charset=utf-8",
                     dataType:"json",
                     cache: false,
                     url: "https://maps.googleapis.com/maps/api/geocode/json?components=locality:"+ address +"&key=AIzaSyDymcMD7E0irE6FM1uGqzEhVmU5LTJDh-0",
