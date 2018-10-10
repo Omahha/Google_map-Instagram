@@ -138,78 +138,16 @@
         </script>
     </header>
     <body>
-        <heading>
-            <button type="button" id="loginMenuBtn">ログイン</button>
-        </heading>
         <div class="main">
-            <div class="loginArea">
-                <form action="login.php" method="post">
-                    <input type="text" name="inputUsername" placeholder="ユーザー名..."><br>
-                    <input type="password" name="inputPassword" placeholder="パスワード..."><br>
-                    
-                    <input type="submit" name="login" value="ログイン" class="btn btn-success"><br>
-                    <button type="button" name="registerMenu" id="registerMenuBtn" class="btn btn-success">新規登録</button>
-                </form>
-            </div>
-            <div class="registerArea">
-                <form action="register.php" method="post">
-                    <label for="regisUsername">ユーザー名：</label><br>
-                    <input type="text" name="regisUsername" placeholder="ユーザー名..."><br>
-                    <label for="regisPassword">パスワード：</label><br>
-                    <input type="password" name="regisPassword" placeholder="パスワード..."><br>
-                    <label for="regisConfPassword">パスワード確認：</label><br>
-                    <input type="password" name="regisConfPassword" placeholder="パスワード確認..."><br>
-                    
-                    <table>
-                        <tr>
-                            <td>
-                                <label for="regisGender">性別：</label>
-                            </td>
-                            <td>
-                                <label for="regisAge">年齢：</label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <select name="regisGender" id="regisGender">
-                                    <option value="">性別...</option>
-                                    <option value="male">男性</option>
-                                    <option value="female">女性</option>
-                                </select>
-                            </td>
-                            <td>
-                                <input type="number" name="regisAge" id="regisAge" placeholder="年齢...">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="regisHeight">身長：</label>
-                            </td>
-                            <td>
-                                <label for="regisWeight">体重：</label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="number" name="regisHeight" id="regisHeight" placeholder="身長...">
-                            </td>
-                            <td>
-                                <input type="number" name="regisWeight" id="regisWeight" placeholder="体重...">
-                            </td>
-                        </tr>
-                    </table>
-                    
-                    <button type="button" name="cancelBtn" id="cancelBtn" class="btn btn-danger">キャンセル</button>
-                    <input type="submit" name="register" value="登録" class="btn btn-success">
-                    
-                </form>
-            </div>
                 <button onclick="test_instagram()">instagram</button>
                 <div id="test_instagram_result"></div>
-               <button onclick="getPosition()">getPosition</button>
-               <div id="result"></div>
-               <div id="map" style="height:500px; width:600px"></div>
-                
+                <form action="">
+                    <input type="text" id="address">
+                    <button type="button" onclick="getLatLng()">get lat lng</button>
+                </form>
+                <button onclick="getPosition()">getPosition</button>
+                <div id="result"></div>
+                <div id="map" style="height:500px; width:600px"></div>
         </div>
         <footer>
             
@@ -226,6 +164,19 @@
                         document.querySelector("#test_instagram_result").innHTML = "reult here";
                     }
                 });
+            }
+
+            function getPosition(){
+                let address = $("#address").val();
+                $.ajax({
+                    type: "GET",
+                    dataType: "jsonp",
+                    cache: false,
+                    url: "https://maps.googleapis.com/maps/api/geocode/json?address="+ address +"&key=AIzaSyDymcMD7E0irE6FM1uGqzEhVmU5LTJDh-0",
+                    success: function(response){
+
+                    }
+                })
             }
         </script>
         <script src="./js/main.js"></script>
