@@ -204,6 +204,8 @@
                     
                 </form>
             </div>
+                <button onclick="test_instagram()">instagram</button>
+                <div id="test_instagram_result"></div>
                <button onclick="getPosition()">getPosition</button>
                <div id="result"></div>
                <div id="map" style="height:500px; width:600px"></div>
@@ -212,6 +214,19 @@
         <footer>
             
         </footer>
+        <script>
+            function test_instagram(){
+                $.ajax({
+                    type: "GET",
+                    dataType: "jsonp",
+                    cache: false,
+                    url: "https://api.instagram.com/v1/media/popular?access_token=8415320219.d67168c.7646405fbd2147169257dcd5ff05ccad",
+                    success: function(data) {
+                        document.querySelector("#test_instagram_result").innHTML = "reult here";
+                    }
+                });
+            }
+        </script>
         <script src="./js/main.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
