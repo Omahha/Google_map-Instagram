@@ -154,6 +154,9 @@
             
         </footer>
         <script>
+
+            var Twitter = require('twitter-node-client').Twitter;
+
             let inputLat, inputLng;
             function getMedia(){
                 console.log('test_instagram');
