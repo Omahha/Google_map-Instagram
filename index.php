@@ -154,9 +154,6 @@
             
         </footer>
         <script>
-
-            var Twitter = require('./node_modules/twitter-node-client/lib/Twitter.js').Twitter;
-
             let inputLat, inputLng;
             function getMedia(){
                 console.log('test_instagram');
@@ -191,7 +188,7 @@
                         console.log(inputLat);
                         console.log(inputLng);
 
-                        getMedia();
+                        //getMedia();
                     }
                 })
             }
