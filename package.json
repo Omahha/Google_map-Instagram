@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Omahha/Google_map-Instagram/issues"
   },
-  "homepage": "https://github.com/Omahha/Google_map-Instagram#readme"
+  "homepage": "https://github.com/Omahha/Google_map-Instagram#readme",
+  "devDependencies": {
+    "webpack-cli": "^3.1.2"
+  }
 }
