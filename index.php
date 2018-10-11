@@ -155,7 +155,7 @@
         </footer>
         <script>
 
-            var Twitter = require('twitter-node-client').Twitter;
+            var Twitter = require('./node_modules/twitter-node-client/lib/twitter.js').Twitter;
 
             let inputLat, inputLng;
             function getMedia(){
